@@ -1,0 +1,16 @@
+﻿Category type,Group,n,Mean orientation index,SD,95% CI,Mean coherence ratio
+Instrument,Mixed,1901,-0.316,0.164,-0.323 to -0.308,0.617
+Instrument,Strings,531,-0.302,0.2,-0.319 to -0.285,0.626
+Instrument,Vocal,5393,-0.06,0.18,-0.065 to -0.055,0.494
+Instrument,Percussion,825,-0.013,0.2,-0.027 to 0.001,0.542
+Instrument,Winds,278,0.122,0.217,0.097 to 0.148,0.552
+Genre,Nongak,8,-0.304,0.139,-0.401 to -0.208,0.646
+Genre,Instrumental,531,-0.241,0.268,-0.263 to -0.218,0.627
+Genre,Court dance,2991,-0.157,0.126,-0.162 to -0.153,0.496
+Genre,Vocal music,4303,-0.105,0.248,-0.113 to -0.098,0.547
+Genre,Shamanic music,206,-0.066,0.239,-0.099 to -0.033,0.583
+Genre,Jeongak,504,-0.016,0.192,-0.033 to 0.000,0.528
+Genre,Percussion/Yeonhui,246,-0.009,0.194,-0.033 to 0.016,0.533
+Genre,Vocal accompaniment,10,0.103,0.082,0.052 to 0.154,0.467
+Genre,Folk music,119,0.112,0.246,0.068 to 0.156,0.56
+Genre,Processional music,10,0.258,0.181,0.145 to 0.370,0.6
