@@ -1,0 +1,45 @@
+# Large audio files
+*.wav
+*.mp3
+*.flac
+*.m4a
+
+# Compressed large files
+*.zip
+*.7z
+*.rar
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Temporary files
+*.tmp
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local/private files
+raw_audio/
+raw_data/
+private_notes/
+local_config.py
+
+# Large local data packages
+zenodo/
+zenodno/
+GADC_Zenodo_v1.0.0/
+GADC_v1.0.0_segmented_audio/
+segmented_audio/
+gugak_files/
+gugak_files_segmented/
+
+# Local exported package files
+GADC_Zenodo_v1.0.0.zip
+GADC_v1.0.0_segmented_audio.zip
