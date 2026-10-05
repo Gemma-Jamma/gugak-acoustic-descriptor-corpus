@@ -1,0 +1,12 @@
+﻿item,value
+input_rows,8928
+segment_orientation_rows,8928
+track_trajectory_rows,6885
+orientation_domains,6
+overall_orientation_missing_rows,0
+orientation_profile_group_missing_rows,0
+yin_oriented_segments,1589
+yang_oriented_segments,327
+balanced_segments,374
+mixed_profile_segments,6638
+algorithm_version,YYOP_v1.0_acoustic_orientation_profile

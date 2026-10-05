@@ -4,102 +4,91 @@
 
 The Gugak Acoustic Descriptor Corpus (GADC) is a segment-level acoustic descriptor resource for Korean traditional music analysis.
 
-This GitHub repository provides lightweight documentation, data dictionaries, validation summaries, manuscript summary tables, and a cleaned development notebook for constructing and using GADC. The full data package, including segmented audio files and tabular data, is archived on Zenodo.
+This GitHub repository provides documentation, data dictionaries, a romanization glossary, the domain mapping rules, validation summaries, manuscript summary tables, and the cleaned development notebook used to construct GADC. The full data package, including the segmented audio files and the tabular data, is archived on Zenodo.
 
 ## Dataset summary
 
-- Source: National Gugak Center audio resources
-- Source institution: National Gugak Center, Ministry of Culture, Sports and Tourism, Republic of Korea
-- Unit of analysis: audio segment
-- Target segment length: 15 seconds
-- Minimum included segment length: 8 seconds
-- Number of segments: 8,928
-- Acoustic descriptor variables: 67
-- Feature table columns: 78
-- Acoustic descriptor values: 598,176
-- Track-level summary rows: 6,885
+- Source: phrase recordings of the National Gugak Center (Ministry of Culture, Sports and Tourism, Republic of Korea), downloaded from https://www.gugak.go.kr/digitaleum/front/phrase/list.do between February and 15 April 2026
+- Licence of the source recordings: Korea Open Government License (KOGL) Type 1 (attribution)
+- Unit of analysis: audio segment (mono, 22,050 Hz, 16-bit PCM)
+- Target segment length: 15 seconds; a final remaining section was kept only if it lasted at least 8 seconds
+- Number of segments: 8,928 from 6,885 source recordings
+- Acoustic descriptor variables: 67 (feature table: 78 columns; 598,176 descriptor values)
 
 ## GitHub repository contents
 
-This repository is intended to provide documentation and processing materials only. Large tabular data files and segmented audio files are archived on Zenodo and are not stored directly in this GitHub repository.
+Large tabular data files and segmented audio files are archived on Zenodo and are not stored in this repository.
 
-- `docs/`: data dictionaries and documentation files
+- `docs/`: data dictionaries, the romanization glossary (`GADC_glossary_v1.1.0.csv`) and the domain mapping rules (`orientation_mapping_rules_v1.csv`)
 - `notebooks/`: cleaned development notebook documenting the data construction pipeline
 - `tables/`: manuscript tables and supplementary summary tables
-- `validation/`: metadata labeling and technical validation summaries
-- `requirements.txt`: Python package requirements for running the notebook
-- `.gitignore`: rules for excluding large audio files, compressed archives, and local data folders
+- `validation/`: metadata-labelling, feature-extraction, merging and orientation validation summaries; the feature-extraction error log (`feature_extraction_errors_v2_fast.csv`) is empty because no extraction error occurred
+- `requirements.txt`: Python packages used by the notebook
+- `.gitignore`: rules for excluding audio files, archives and local data folders
 
 ## Zenodo data package
 
-The full GADC data package is archived on Zenodo.
+The full GADC data package is archived on Zenodo and is publicly accessible.
 
-- Version DOI: https://doi.org/10.5281/zenodo.19964647
-- Concept DOI: https://doi.org/10.5281/zenodo.19964646
+- Version 1.1.0 (current): https://doi.org/10.5281/zenodo.23156135
+- Version 1.0.0: https://doi.org/10.5281/zenodo.19964647
+- Concept DOI (all versions): https://doi.org/10.5281/zenodo.19964646
 
-The version DOI refers to the fixed v1.0.0 release used in the manuscript, whereas the concept DOI represents the overall GADC record across all versions.
+Version 1.1.0 contains two archive files:
 
-The Zenodo record contains two archive files:
+- `GADC_Zenodo_v1.1.0.zip`: tabular data, documentation, validation files, figures, tables and the cleaned development notebook
+- `GADC_v1.1.0_segmented_audio.zip`: segmented WAV files under `segmented_audio/<folder>/<file>`
 
-- `GADC_Zenodo_v1.0.0.zip`: tabular data, documentation, validation files, figures, tables, and the cleaned development notebook
-- `GADC_v1.0.0_segmented_audio.zip`: segmented WAV files generated for segment-level acoustic analysis
+## Romanized names (version 1.1.0)
 
-Files are currently under restricted access for peer review and will be made publicly accessible upon publication.
+All folder names, file names and Korean text values in the tables are written in ASCII characters following the Revised Romanization of Korean. Folder and file names are written as name parts joined by hyphens (performer or instrument, genre, piece or section), each starting with a capital letter; for example, 가야금경기민요전체 becomes Gayageum-Gyeonggi-Minyo-Jeonche, and the first segment of source recording s1-911-001 in that folder is `Gayageum-Gyeonggi-Minyo-Jeonche__s1-911-001__seg01.wav`. The metadata, merged, orientation and track-level tables keep the original Korean strings in companion columns ending in `_ko` and give Korean category labels in English in columns ending in `_en`. The acoustic descriptor table keeps its 78 columns. `docs/GADC_glossary_v1.1.0.csv` lists each Korean category term with its romanized form and English gloss, and the name-mapping file in the Zenodo package (`docs/GADC_name_mapping_v1.1.0.csv`) links each romanized audio path to its original Korean path.
 
 ## Main data files in the Zenodo archive
 
-The main tabular data files include:
-
-- `GADC_segment_metadata_v1.0.csv`: segment-level metadata table derived from source file names and folder structures
-- `GADC_acoustic_descriptors_v1.0.csv`: segment-level acoustic descriptor table
-- `GADC_features_metadata_merged_v1.0.csv`: merged feature–metadata table
-- `GADC_orientation_profiles_v1.0.csv`: descriptor-derived acoustic orientation profile table with direction and coherence labels
-- `GADC_orientation_profiles_with_quantile_bands_v1.0.csv`: orientation profile table with tertile and quintile band variables
-- `GADC_track_metadata_summary_v1.0.csv`: auxiliary track-level summary table
-- `GADC_track_temporal_trajectory_v1.0.csv`: auxiliary track-level temporal trajectory table
+- `GADC_segment_metadata_v1.1.0.csv`: segment-level metadata derived from source file names and folder structure
+- `GADC_acoustic_descriptors_v1.1.0.csv`: segment-level acoustic descriptor table
+- `GADC_features_metadata_merged_v1.1.0.csv`: merged feature–metadata table
+- `GADC_orientation_profiles_v1.1.0.csv`: descriptor-derived acoustic orientation profiles with direction and coherence labels
+- `GADC_orientation_profiles_with_quantile_bands_v1.1.0.csv`: orientation profiles with tertile and quintile band variables
+- `GADC_track_metadata_summary_v1.1.0.csv`: auxiliary track-level summary table
+- `GADC_track_temporal_trajectory_v1.1.0.csv`: auxiliary track-level temporal trajectory table
 
 ## Segmented audio files
 
-The segmented audio files included in the Zenodo archive were generated by dividing source recordings provided by the National Gugak Center, Ministry of Culture, Sports and Tourism, Republic of Korea, into fixed-length analysis units. These segmented files are derivative research materials created for segment-level acoustic analysis.
+The segmented audio files were generated by dividing recordings of the National Gugak Center into fixed-length analysis units. They are derived from public works of the National Gugak Center, which are used according to the Korea Open Government License (KOGL) Type 1 (https://www.kogl.or.kr/info/licenseTypeEn.do). Users who reuse the original or segmented audio should keep this attribution. The use of these works does not imply sponsorship by, or a special relationship with, the National Gugak Center.
 
-The source recordings were identified as materials provided under Type 1 attribution-based public-sector reuse terms in Korea, where applicable. Users who reuse the original or segmented audio files should retain appropriate source attribution and comply with the attribution terms indicated by the source provider.
-
-본 데이터셋에 포함된 분절 음원은 대한민국 문화체육관광부 산하 국립국악원이 제공한 국악 음원 자료를 고정 길이의 분석 단위로 분절하여 생성한 2차적 연구 산출물입니다. 해당 분절 음원은 세그먼트 수준의 음향 분석을 목적으로 생성되었습니다.
-
-원자료 음원은 해당되는 경우 공공누리 제1유형(출처표시) 조건에 따라 제공된 자료입니다. 원음원 또는 본 데이터셋의 분절 음원을 재사용하는 이용자는 적절한 출처표시를 유지하고, 적용 가능한 공공누리 제1유형 이용조건을 준수해야 합니다.
+본 데이터셋의 분절 음원은 국립국악원의 공공저작물을 공공누리 제1유형(출처표시) 조건에 따라 이용하여 만든 2차적 연구 산출물입니다. 재사용 시 출처를 표시해 주십시오.
 
 ## Important notes
 
 - Orientation variables are descriptor-derived summary variables, not ground-truth Yin/Yang labels.
 - This corpus does not operationalize the Five Elements categories.
-- Chroma descriptors should be interpreted as supplementary pitch-class distribution features, not harmonic descriptors.
+- Chroma descriptors are supplementary pitch-class distribution features, not harmonic descriptors.
 - The descriptors do not directly annotate Nonghyeon or Sigimsae.
-- The segmented audio files are provided for research transparency and reproducibility. Users should retain source attribution when reusing them.
-- The data tables and orientation variables should be interpreted as computational descriptors and derived summary variables, not as definitive musicological annotations.
+- The data tables and orientation variables are computational descriptors and derived summary variables, not definitive musicological annotations.
 
 ## Processing pipeline
 
-The cleaned development notebook in `notebooks/` documents the main data construction pipeline, including:
+The cleaned development notebook in `notebooks/` documents:
 
 1. rule-based metadata construction and refinement,
-2. audio segmentation,
-3. acoustic feature extraction,
-4. feature–metadata merging,
-5. acoustic orientation index construction,
-6. direction and domain-coherence labeling,
-7. technical validation, and
-8. generation of publication figures and summary tables.
+2. acoustic feature extraction,
+3. feature–metadata merging,
+4. acoustic orientation index construction,
+5. direction and domain-coherence labelling,
+6. technical validation, and
+7. generation of publication figures and summary tables.
 
-Local file paths in the notebook may need to be modified according to the user’s computing environment.
+Audio segmentation is not part of the notebook. The segments were produced with the rule described in the Methods of the associated Data Descriptor (15-second windows; a final remaining section was kept only if it lasted at least 8 seconds). The released segment files are mono, 22,050 Hz, 16-bit PCM WAV files.
+
+The notebook keeps its original Korean comments and rule keywords. The keywords are matched against the original Korean file and folder names and therefore remain in Korean; the Korean category terms that appear in the released tables are listed with their romanized forms and English glosses in `docs/GADC_glossary_v1.1.0.csv`. Local file paths in the notebook may need to be changed for the user's computing environment.
 
 ## Code and dependencies
 
-The main processing workflow was implemented in Python. Required Python packages are listed in `requirements.txt`.
-
-The current release provides the cleaned development pipeline as a Jupyter notebook. Modular Python scripts may be added in future releases.
+The processing workflow was implemented in Python. Required Python packages are listed in `requirements.txt`.
 
 ## Citation
 
-Please cite the Zenodo record:
+Please cite the dataset:
 
-Gugak Acoustic Descriptor Corpus: A Segment-Level Resource for Korean Traditional Music Analysis. Zenodo. https://doi.org/10.5281/zenodo.19964647
+Hong, S. & Lee, I. Gugak Acoustic Descriptor Corpus: A Segment-Level Resource for Korean Traditional Music Analysis (version 1.1.0). Zenodo. https://doi.org/10.5281/zenodo.23156135 (2026).
