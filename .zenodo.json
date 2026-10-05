@@ -1,0 +1,11 @@
+{
+  "title": "GADC data construction pipeline (Gugak Acoustic Descriptor Corpus)",
+  "upload_type": "software",
+  "version": "v1.1.0",
+  "license": "CC-BY-4.0",
+  "creators": [
+    {"name": "Hong, SangHee", "affiliation": "Seoul National University"},
+    {"name": "Lee, InHo", "affiliation": "Soonchunhyang University"}
+  ],
+  "description": "Documentation, data dictionaries, romanization glossary, domain mapping rules, validation summaries and the cleaned Jupyter notebook for rule-based metadata construction, acoustic feature extraction, feature-metadata merging, acoustic orientation profiling and technical validation of the Gugak Acoustic Descriptor Corpus (GADC). Audio segmentation is not part of the notebook; it followed the rule described in the associated Data Descriptor. The data package is archived separately on Zenodo (concept DOI 10.5281/zenodo.19964646)."
+}
