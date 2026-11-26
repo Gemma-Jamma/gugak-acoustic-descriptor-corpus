@@ -81,7 +81,7 @@ The cleaned development notebook in `notebooks/` documents:
 
 Audio segmentation is not part of the notebook. The segments were produced with the rule described in the Methods of the associated Data Descriptor (15-second windows; a final remaining section was kept only if it lasted at least 8 seconds). The released segment files are mono, 22,050 Hz, 16-bit PCM WAV files.
 
-The notebook keeps its original Korean comments and rule keywords. The keywords are matched against the original Korean file and folder names and therefore remain in Korean; the Korean category terms that appear in the released tables are listed with their romanized forms and English glosses in `docs/GADC_glossary_v1.1.0.csv`. Local file paths in the notebook may need to be changed for the user's computing environment.
+From release v1.1.1, the comments and console messages in the notebook are written in English. Only the rule keywords remain in Korean, because they are matched against the original Korean file and folder names; the Korean category terms that appear in the released tables are listed with their romanized forms and English glosses in `docs/GADC_glossary_v1.1.0.csv`. Local file paths in the notebook may need to be changed for the user's computing environment.
 
 ## Code and dependencies
 
